@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0xmk485" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.43.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <decision id="ocena-reklamacji" name="Ocena reklamacji">
+    <decisionTable id="DecisionTable_1oac586">
+      <input id="Input_1" label="Data reklamacji" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="date">
+          <text>date(reklamacja.data)</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1a9r9po" label="Uzasadnienie">
+        <inputExpression id="LiteralExpression_1b0rp1p" typeRef="string">
+          <text>reklamacja.wada</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Decyzja" name="status" typeRef="string" />
+      <output id="OutputClause_0q7m7kg" label="Uzasadnienie decyzji" name="uzasadnienie" typeRef="string" />
+      <rule id="DecisionRule_0tn2i70">
+        <inputEntry id="UnaryTests_1rvn8d2">
+          <text>&lt;= date(today()) - duration("P2Y")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jnsjnk">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0obs3hx">
+          <text>"Odrzucona"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q6ay7j">
+          <text>"Przekroczono okres gwarancji dwuletniej"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c4p3iy">
+        <inputEntry id="UnaryTests_1alqy9t">
+          <text>[ date(today()) - duration("P2Y") .. date(today()) - duration("P14D") ]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02bb5jj">
+          <text>"wada fabryczna"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jrh6kj">
+          <text>"Przyjęta"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x5b497">
+          <text>"Termin gwarancji dwuletniej nadal obowiązuje, a wada jest fabryczna"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bt8f9h">
+        <inputEntry id="UnaryTests_1ahciuq">
+          <text>&gt;= date(today()) - duration("P14D")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a06631">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d8zngd">
+          <text>"Przyjęta"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1evs41y">
+          <text>"Okres gwarancji 14 dniowej nadal aktywny"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ehqrt6">
+        <inputEntry id="UnaryTests_1drde25">
+          <text>[ date(today()) - duration("P2Y") .. date(today()) - duration("P14D") ]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y1mwm7">
+          <text>not("wada fabryczna")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0675p8h">
+          <text>"Rozpatrzenie"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16aa491">
+          <text>"Do dalszego rozpatrzenia"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="Decision_17458e8_di" dmnElementRef="ocena-reklamacji">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

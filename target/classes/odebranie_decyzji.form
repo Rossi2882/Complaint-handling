@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "label": "Imię i Nazwisko",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_09ublzc",
+        "columns": null
+      },
+      "id": "Field_1w425zq",
+      "key": "reklamacja.imieNazwisko",
+      "readonly": true
+    },
+    {
+      "label": "Status reklamacji",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1q1mt6e",
+        "columns": null
+      },
+      "id": "Field_1343xzc",
+      "key": "decyzja.sprzedawcy",
+      "readonly": true
+    },
+    {
+      "label": "Uzasadnienie decyzji",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0n8yunp",
+        "columns": null
+      },
+      "id": "Field_0kpppsj",
+      "key": "decyzja.uzasadnienie",
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "odebranie_decyzji",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.43.1"
+  },
+  "schemaVersion": 19
+}

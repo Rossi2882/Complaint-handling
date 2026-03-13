@@ -1,0 +1,24 @@
+{
+  "id" : "com.reklamacja.app.TimerTest",
+  "name" : "TimerTest",
+  "runs" : [ {
+    "name" : "testLeniwegoSprzedawcy_Timer",
+    "coverages" : [ {
+      "processDefinitionId" : "Process_Reklamacja",
+      "completedElements" : [ "StartEvent_Reklamacja", "Activity_Reklamacja" ],
+      "takenSequenceFlows" : [ "Flow_03h2y9f" ],
+      "coverage" : 0.061224489795918366
+    } ]
+  } ],
+  "models" : [ {
+    "processDefinitionId" : "Process_Reklamacja",
+    "totalElementCount" : 49,
+    "version" : "1"
+  } ],
+  "coverages" : [ {
+    "processDefinitionId" : "Process_Reklamacja",
+    "completedElements" : [ "StartEvent_Reklamacja", "Activity_Reklamacja" ],
+    "takenSequenceFlows" : [ "Flow_03h2y9f" ],
+    "coverage" : 0.061224489795918366
+  } ]
+}

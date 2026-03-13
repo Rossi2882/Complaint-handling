@@ -1,0 +1,142 @@
+{
+  "components": [
+    {
+      "label": "Imię i nazwisko",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0r3531u",
+        "columns": null
+      },
+      "id": "Field_0usxxai",
+      "key": "reklamacja.imieNazwisko",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "Marcin Majewski",
+      "readonly": true
+    },
+    {
+      "label": "Adres zamieszkania",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_008nusy",
+        "columns": null
+      },
+      "id": "Field_1vyvnl0",
+      "key": "reklamacja.adres",
+      "defaultValue": "Poznań",
+      "readonly": true
+    },
+    {
+      "label": "Numer kontaktowy",
+      "type": "number",
+      "layout": {
+        "row": "Row_09quy8p",
+        "columns": null
+      },
+      "id": "Field_1v27c7o",
+      "key": "reklamacja.numer",
+      "appearance": {
+        "prefixAdorner": "+48"
+      },
+      "validate": {
+        "min": "100000000",
+        "max": "999999999"
+      },
+      "defaultValue": 132321123,
+      "readonly": true
+    },
+    {
+      "label": "Adres e-mail",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0hheuvd",
+        "columns": null
+      },
+      "id": "Field_17lnzgl",
+      "key": "reklamacja.email",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "default@wp.pl",
+      "readonly": true
+    },
+    {
+      "label": "Numer Zamówienia",
+      "type": "number",
+      "layout": {
+        "row": "Row_11magyj",
+        "columns": null
+      },
+      "id": "Field_0120e9h",
+      "key": "reklamacja.NrZamowienia",
+      "defaultValue": 1,
+      "readonly": true
+    },
+    {
+      "label": "Model butów",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1mz59oz",
+        "columns": null
+      },
+      "id": "Field_1plscsq",
+      "key": "reklamacja.model",
+      "defaultValue": "nike",
+      "readonly": true
+    },
+    {
+      "label": "Numer konta bankowego",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02ufmdt",
+        "columns": null
+      },
+      "id": "Field_0l2x3m1",
+      "key": "reklamacja.NrKonta",
+      "defaultValue": "20 1234 1234 1234 1234 1234 1234",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Data zakupu",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0amyn51",
+        "columns": null
+      },
+      "id": "Field_11y2f60",
+      "key": "reklamacja.data",
+      "validate": {
+        "required": true
+      },
+      "disallowPassedDates": false,
+      "readonly": true
+    },
+    {
+      "label": "Opis wady produktu",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0a9az3f",
+        "columns": null
+      },
+      "id": "Field_0pqllii",
+      "key": "reklamacja.wada",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "zmiana-nr-karty",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.43.1"
+  },
+  "schemaVersion": 19
+}

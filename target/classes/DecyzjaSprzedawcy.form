@@ -1,0 +1,71 @@
+{
+  "components": [
+    {
+      "label": "Numer zamówienia",
+      "type": "number",
+      "layout": {
+        "row": "Row_0rnnhq5",
+        "columns": null
+      },
+      "id": "Field_1jlv4mb",
+      "key": "reklamacja.NrZamowienia",
+      "readonly": true
+    },
+    {
+      "label": "Opis wady produktu",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_09pso1j",
+        "columns": null
+      },
+      "id": "Field_087rjfx",
+      "key": "reklamacja.wada",
+      "readonly": true
+    },
+    {
+      "label": "Czy przyjmujesz tą reklamacje?",
+      "values": [
+        {
+          "label": "Tak",
+          "value": "Przyjęta"
+        },
+        {
+          "label": "Nie",
+          "value": "Odrzucona"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1qhqods",
+        "columns": null
+      },
+      "id": "Field_12immc7",
+      "key": "decyzja.sprzedawcy",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Text area",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1fsfax1",
+        "columns": null
+      },
+      "id": "Field_0ykjizy",
+      "key": "decyzja.uzasadnienie",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "decyzja-sprzedawcy",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.43.1"
+  },
+  "schemaVersion": 19
+}
